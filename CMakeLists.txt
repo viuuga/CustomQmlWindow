@@ -10,14 +10,28 @@ qt_standard_project_setup(REQUIRES 6.8)
 
 qt_add_executable(appproject_1
     main.cpp
+
 )
 
-qt_add_qml_module(appproject_1
-    URI project_1
-    QML_FILES
+qt_add_resources(appproject_1 "app"
+    PREFIX "/"
+    FILES
         Main.qml
-        QML_FILES qml/GeneralPage/GeneralWidget.qml
-        QML_FILES qml/CommonElements/ButtonNewPage.qml
+
+        Constants/Colors.qml
+        Constants/ButtonToolbarWindowActions.qml
+        Constants/SizeConsts.qml
+        Constants/StringConsts.qml
+        Constants/qmldir
+
+        qml/GeneralPage/GeneralWidget.qml
+        qml/CommonElements/ButtonNewPage.qml
+        qml/WindowComponents/TopWindowToolbar.qml
+        qml/WindowComponents/TopToolbarWindowButtons.qml
+        qml/WindowComponents/WindowResizebleItem.qml
+        qml/CommonElements/ButtonToolbarWindow.qml
+
+
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

@@ -1,18 +1,21 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQuickView>
 
 int main(int argc, char *argv[])
 {
+    qputenv("QSG_RENDER_LOOP", "basic");
+    QQuickWindow::setDefaultAlphaBuffer(true);
+
     QGuiApplication app(argc, argv);
 
-    QQmlApplicationEngine engine;
-    QObject::connect(
-        &engine,
-        &QQmlApplicationEngine::objectCreationFailed,
-        &app,
-        []() { QCoreApplication::exit(-1); },
-        Qt::QueuedConnection);
-    engine.loadFromModule("project_1", "Main");
+    QQuickView view;
+    view.setSource(QUrl("qrc:/Main.qml"));
+    view.setResizeMode(QQuickView::SizeRootObjectToView);
+    view.setFlags(Qt::FramelessWindowHint);
+    view.setColor(Qt::transparent);
+    view.setMinimumSize(QSize(640, 480));
+    view.show();
 
     return app.exec();
 }
