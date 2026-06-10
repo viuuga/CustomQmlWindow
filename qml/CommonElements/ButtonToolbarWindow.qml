@@ -15,7 +15,7 @@ Rectangle {
     }
     width: height * 1.5
 
-    radius: height / 4
+    radius: height / 3
 
     color: {
         if (buttonToolbarWindowArea.pressed)
@@ -69,6 +69,13 @@ Rectangle {
 
     Behavior on height {
         NumberAnimation {
+            duration: 150
+            easing.type: Easing.OutQuad
+        }
+    }
+
+    Behavior on color {
+        ColorAnimation {
             duration: 150
             easing.type: Easing.OutQuad
         }

@@ -99,4 +99,5 @@ Item {
         cursorShape: Qt.SizeFDiagCursor
         onPressed: Window.window.startSystemResize(Qt.BottomEdge | Qt.RightEdge)
     }
+
 }

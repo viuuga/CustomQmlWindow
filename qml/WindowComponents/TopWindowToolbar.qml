@@ -9,8 +9,8 @@ Rectangle {
 
     color: "green"
 
-    topLeftRadius: 5
-    topRightRadius: 5
+    topLeftRadius: parent.radius
+    topRightRadius: parent.radius
     height: SizeConsts.windowTopToolbarHeight
 
     MouseArea {
@@ -60,5 +60,33 @@ Rectangle {
         }
 
         height: parent.height
+    }
+
+    function hideButtons() {
+        hideButtonsAnimation.start()
+    }
+
+    function showButtons() {
+        showButtonsAnimation.start()
+    }
+
+    NumberAnimation {
+        id: hideButtonsAnimation
+
+        target: windowButtons
+        property: "opacity"
+        duration: 300
+        easing.type: Easing.InOutQuad
+        to: 0
+    }
+
+    NumberAnimation {
+        id: showButtonsAnimation
+
+        target: windowButtons
+        property: "opacity"
+        duration: 300
+        easing.type: Easing.InOutQuad
+        to: 1
     }
 }
