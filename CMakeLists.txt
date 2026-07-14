@@ -24,10 +24,8 @@ qt_add_resources(appproject_1 "app"
         Constants/StringConsts.qml
         Constants/qmldir
 
-        qml/GeneralPage/GeneralWidget.qml
         qml/CommonElements/ButtonNewPage.qml
         qml/WindowComponents/TopWindowToolbar.qml
-        qml/WindowComponents/TopToolbarWindowButtons.qml
         qml/WindowComponents/WindowResizebleItem.qml
         qml/CommonElements/ButtonToolbarWindow.qml
 

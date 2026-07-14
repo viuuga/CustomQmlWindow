@@ -6,7 +6,7 @@ Rectangle {
     id: rootWindow
     width: 640
     height: 480
-    color: "Blue"
+    color: Colors.rootWindowColor
 
     readonly property int cornerRadius: 10
     readonly property bool windowDecorated: Window.window ? Window.window.visibility

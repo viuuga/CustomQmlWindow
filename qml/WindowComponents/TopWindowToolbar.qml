@@ -7,7 +7,7 @@ import "../../Constants"
 Rectangle {
     id: topWindowToolbar
 
-    color: "green"
+    color: Colors.topToolbarColor
 
     topLeftRadius: parent.radius
     topRightRadius: parent.radius
